@@ -4,15 +4,41 @@ const inputForm = document.querySelector("form");
 const submitBtn = document.querySelector("#submit");
 const stat = document.querySelector("#status");
 const statusImg = document.querySelector("#status-image");
-
-
-console.log(statusImg?.classList[1])
-
+const time = document.querySelector('#time');
+const sampleLocations = document.querySelectorAll('.sample-locations > div')
+const weatherBackground = document.querySelector('.weather-background');
+let timeofday;
 window.addEventListener('load', () => {
-
-    let statusimg = stat.textContent.includes('cloud') ? "fa-cloud" : "fa-x"
-    console.log(statusimg)
-    statusImg.classList[1] = statusimg
+    if (parseInt(time.textContent.split(":")[0]) > 17) {
+        timeofday = "night"
+        console.log(parseInt(time.textContent.split(":")[0]))
+        weatherBackground.classList.add('night');
+        sampleLocations.forEach(location => {
+            location.classList.add('night');
+        })
+    }
+    else {
+        timeofday = "day"
+        weatherBackground.classList.remove('night');
+        sampleLocations.forEach(location => {
+            location.classList.remove('night');
+        })
+    }
+    if (stat.textContent.includes('cloud')) {
+        statusImg.src = `../static/assets/cloudy-${timeofday}.svg`
+    }
+    else if (stat.textContent.includes('clear')) {
+        statusImg.src = `../static/assets/clear-${timeofday}.svg`
+    }
+    else if (stat.textContent.includes('rain')) {
+        statusImg.src = `../static/assets/rain-${timeofday}.svg`
+    }
+    else if (stat.textContent.includes('thunder')) {
+        statusImg.src = `../static/assets/thunder-${timeofday}.svg`
+    }
+    else if (stat.textContent.includes('snow')) {
+        statusImg.src = `../static/assets/snow-${timeofday}.svg`
+    }
 })
 
 clearInputBtn.addEventListener("click", () => {
@@ -31,9 +57,4 @@ sampleCityDivs.forEach(city => {
         input.value = city.querySelector('.city').textContent;
         inputForm?.requestSubmit();
     })
-})
-
-const sampleCities = document.querySelectorAll('.sample-locations .city');
-sampleCities.forEach(city => {
-    city.value = city.textContent;
 })

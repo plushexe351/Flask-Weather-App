@@ -18,19 +18,40 @@
   </head>
   <body>
     <h1 class="heading"><i class="fa fa-cloud"></i>BigBlackClouds</h1>
-    <div class="loader">
-      <div class="loading"></div>
-    </div>
     <div class="main-container">
       <div class="weather-container">
         <div class="weather-background">
-          <h1>{{ title }}</h1>
-          <i class="fa" id="status-image"></i>
+          <h1>{{ title }}, {{ country_code }}</h1>
+          <small id="time">{{ time }}</small>
+          <img src="../static/assets/clear-day.svg" alt="" id="status-image" />
+          <!-- <p id="temp">{{ temp }} &deg;C</p> -->
         </div>
         <div class="weather-details">
           <p id="status">{{ status }}</p>
           <p id="temp">{{ temp }}&deg;C</p>
           <p id="feels_like">Feels like {{ feels_like }} &deg;C</p>
+        </div>
+        <div class="more-details">
+          <div class="current-temp">
+            <h4><i class="fa fa-temperature-low"></i>Current Temp</h4>
+            <span>{{ temp }} &deg;C</span>
+          </div>
+          <div class="max-temp">
+            <h4><i class="fa fa-temperature-arrow-up"></i>Max Temp</h4>
+            <span>{{ max_temp }} &deg;C</span>
+          </div>
+          <div class="min-temp">
+            <h4><i class="fa fa-temperature-arrow-down"></i>Min Temp</h4>
+            <span>{{ min_temp }} &deg;C</span>
+          </div>
+          <div class="Humidity">
+            <h4><i class="fa fa-droplet"></i>Humidity</h4>
+            <span>{{ humidity }}</span>
+          </div>
+          <div class="Pressure">
+            <h4><i class="fa fa-wind"></i>Pressure</h4>
+            <span>{{ pressure }}</span>
+          </div>
         </div>
       </div>
 
@@ -56,12 +77,22 @@
         <div>
           <i class="fa fa-sun"></i>
           <div class="city" name="sample-city">New Delhi , IN</div>
-          <span>{{ temp1 }} &deg;C</span>
+          <span>{{ temp1 }} &deg;C</span>
         </div>
         <div>
           <i class="fa fa-cloud"></i>
-          <div class="city" name="sample-city">California, NYC</div>
-          <span>{{ temp2 }} &deg;C</span>
+          <div class="city" name="sample-city">California, US</div>
+          <span>{{ temp2 }} &deg;C</span>
+        </div>
+        <div>
+          <i class="fa fa-sun"></i>
+          <div class="city" name="sample-city">Tokyo, JP</div>
+          <span>{{ temp3 }} &deg;C</span>
+        </div>
+        <div>
+          <i class="fa fa-cloud"></i>
+          <div class="city" name="sample-city">Siliguri, IN</div>
+          <span>{{ temp4 }} &deg;C</span>
         </div>
       </div>
     </div>
