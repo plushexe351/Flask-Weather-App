@@ -3,6 +3,7 @@ from weather import get_current_weather, fahrenheit_to_celsius
 from waitress import serve
 from datetime import datetime
 from timezonefinder import TimezoneFinder
+import pytz
 
 app = Flask(__name__)
 
