@@ -10,7 +10,8 @@ const weatherBackground = document.querySelector('.weather-background');
 let timeofday;
 
 window.addEventListener('load', () => {
-    if (parseInt(time.textContent.split(":")[0]) > 17 || parseInt(time.textContent.split(":")[0]) < 4) {
+    const hrs = parseInt(time.textContent.split(":")[0])
+    if (hrs > 17 || hrs < 4) {
         timeofday = "night"
         weatherBackground.classList.add('night');
         sampleLocations.forEach(location => {
