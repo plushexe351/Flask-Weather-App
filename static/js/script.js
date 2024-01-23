@@ -24,19 +24,19 @@ window.addEventListener('load', () => {
             location.classList.remove('night');
         })
     }
-    if (stat.textContent.includes('cloud')) {
+    if (stat.textContent.toLowerCase().includes('cloud')) {
         statusImg.src = `../static/assets/cloudy-${timeofday}.svg`
     }
-    else if (stat.textContent.includes('clear')) {
+    else if (stat.textContent.toLowerCase().includes('clear')) {
         statusImg.src = `../static/assets/clear-${timeofday}.svg`
     }
-    else if (stat.textContent.includes('rain')) {
+    else if (stat.textContent.toLowerCase().includes('rain')) {
         statusImg.src = `../static/assets/rain-${timeofday}.svg`
     }
-    else if (stat.textContent.includes('thunder')) {
+    else if (stat.textContent.toLowerCase().includes('thunder')) {
         statusImg.src = `../static/assets/thunder-${timeofday}.svg`
     }
-    else if (stat.textContent.includes('snow')) {
+    else if (stat.textContent.toLowerCase().includes('snow')) {
         statusImg.src = `../static/assets/snow-${timeofday}.svg`
     }
 })
