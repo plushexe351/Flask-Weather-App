@@ -8,10 +8,10 @@ const time = document.querySelector('#time');
 const sampleLocations = document.querySelectorAll('.sample-locations > div')
 const weatherBackground = document.querySelector('.weather-background');
 let timeofday;
+
 window.addEventListener('load', () => {
     if (parseInt(time.textContent.split(":")[0]) > 17) {
         timeofday = "night"
-        console.log(parseInt(time.textContent.split(":")[0]))
         weatherBackground.classList.add('night');
         sampleLocations.forEach(location => {
             location.classList.add('night');
