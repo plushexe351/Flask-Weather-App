@@ -21,6 +21,7 @@ def format_temperature(weather_data):
 
 @app.route('/')
 @app.route('/index')
+
 def index():
  
     # loading sample locations data 
@@ -37,6 +38,7 @@ def index():
     )
 
 @app.route('/weather')
+
 def get_weather():
     city = request.args.get('city')
     
