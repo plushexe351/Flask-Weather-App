@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
         statusImg.src = `../static/assets/rain-${timeofday}.svg`
     }
     else if (stat.textContent.toLowerCase().includes('thunder')) {
-        statusImg.src = `../static/assets/thunder-${timeofday}.svg`
+        statusImg.src = `../static/assets/storm-${timeofday}.svg`
     }
     else if (stat.textContent.toLowerCase().includes('snow')) {
         statusImg.src = `../static/assets/snow-${timeofday}.svg`
